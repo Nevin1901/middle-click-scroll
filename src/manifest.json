@@ -1,0 +1,12 @@
+{
+  "name": "Middle Click Scroll",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Allows Linux/Mac users to middle click scroll",
+  "permissions": ["scripting", "webNavigation", "activeTab", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://*/*", "http://*/*"]
+}
