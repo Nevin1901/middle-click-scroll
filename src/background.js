@@ -3,10 +3,30 @@ const ignore = ["chrome://", "brave://"];
 function startMouseListener() {
   console.log("aoijsdgjhoiadsj");
   console.log(document);
+
+  const scrollIcon = `<svg height="100" width="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+</svg>
+`;
+
+  let container = document.createElement("div");
+  container.setAttribute("id", "click_window__ext");
+  document.body.appendChild(container);
+
+  let cursor = document.createElement("div");
+  cursor.setAttribute("id", "middle_click_cursor__ext");
+  cursor.innerHTML = scrollIcon;
+  container.appendChild(cursor);
+
   document.addEventListener("mousedown", (e) => {
     if (e.button !== 1) {
       return;
     }
+    cursor.style.opacity = "1";
+    console.log(`${e.pageX}px`);
+    cursor.style.left = `${e.pageX}px`;
+    cursor.style.top = `${e.pageY}px`;
+    console.log(e.clientX);
     console.log("middle mouse down");
   });
 
@@ -15,6 +35,7 @@ function startMouseListener() {
       return;
     }
 
+    cursor.style.opacity = "0";
     console.log("middle mouse up");
   });
 }

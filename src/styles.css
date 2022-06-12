@@ -1,0 +1,21 @@
+#click_window__ext {
+  background-color: rgba(255, 255, 255, 0);
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+#middle_click_cursor__ext {
+  height: 100px;
+  width: 100px;
+  pointer-events: none;
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  opacity: 0;
+  z-index: 9999;
+}

@@ -8,5 +8,12 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
   "host_permissions": ["https://*/*", "http://*/*"]
 }
